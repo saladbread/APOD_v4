@@ -46,6 +46,7 @@ class ListViewController: UITableViewController {
         dateFormatter.dateFormat = "yyMMdd"
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         //title="Astronomy Picture of the Day"
+        navigationController?.navigationBar.prefersLargeTitles = true
         title = "每日一天文圖"
         let urlString = imageArray.isEmpty ? urlBaseString+"/apod.html" : ""
         //let urlString = imageArray.isEmpty ? urlBaseString+"/astropix.html" : ""
@@ -229,6 +230,9 @@ extension ListViewController{
         let imageDetails = imageArray[indexPath.row]
         cell.dateLabel.text = imageDetails.date
         cell.titleLabel.text = imageDetails.title
+        cell.indexPath = indexPath
+        cell.delegate = self
+        cell.favorite = imageDetails.favorite
         
         if imageDetails.image != nil {
             cell.photoView.image = imageDetails.image
@@ -250,6 +254,8 @@ extension ListViewController{
         
         return cell
     }
+    
+
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let height = tableView.frame.size.height
@@ -406,6 +412,17 @@ extension ListViewController: UITableViewDropDelegate {
     }
     
     
+}
+
+extension ListViewController: CellButtonDelegate {
+
+    func Tapped(_ button: UIButton, with indexPath: IndexPath) {
+        imageArray[indexPath.row].favorite = !imageArray[indexPath.row].favorite
+        button.setTitle(imageArray[indexPath.row].favorite ? "♥️":"♡", for: .normal)
+    }
+    
+    
+
 }
 
 

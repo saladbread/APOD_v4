@@ -26,6 +26,7 @@ final class ImageRecord: NSObject, Codable, NSItemProviderWriting, NSItemProvide
     var url: String
     var hdurl: String
     var state: ImageRecordState = .new
+    var favorite: Bool = false
     
     init(title: String = "", date: String = "", description: String = "", url: String = "", hdurl: String = "", copyright: String = "", mediaType: String = "") {
         self.title = title
@@ -38,7 +39,7 @@ final class ImageRecord: NSObject, Codable, NSItemProviderWriting, NSItemProvide
     }
     
     private enum CodingKeys : String, CodingKey {
-        case title, date, url, hdurl, description, copyright, mediaType
+        case title, date, url, hdurl, description, copyright, mediaType, favorite
     }
     
     func encode(to encoder: Encoder) throws {
@@ -50,6 +51,7 @@ final class ImageRecord: NSObject, Codable, NSItemProviderWriting, NSItemProvide
         try container.encode(explanation, forKey: .description)
         try container.encode(copyright, forKey: .copyright)
         try container.encode(mediaType, forKey: .mediaType)
+        try container.encode(favorite, forKey: .favorite)
     }
     
     required init(from decoder: Decoder) throws {
@@ -61,7 +63,7 @@ final class ImageRecord: NSObject, Codable, NSItemProviderWriting, NSItemProvide
         explanation = try container.decode(String.self, forKey: .description)
         copyright = try container.decode(String.self, forKey: .copyright)
         mediaType = try container.decode(String.self, forKey: .mediaType)
-
+        favorite = try container.decode(Bool.self, forKey: .favorite)
         image = nil
         state = .new
         
