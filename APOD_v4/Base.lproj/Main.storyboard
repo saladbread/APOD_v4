@@ -44,9 +44,8 @@
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="PGD-BZ-KW6">
                                             <rect key="frame" x="141.5" y="56.5" width="37" height="37"/>
                                         </activityIndicatorView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQz-dT-XHe">
-                                            <rect key="frame" x="270" y="12" width="30" height="35"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQz-dT-XHe">
+                                            <rect key="frame" x="274" y="11" width="30" height="35"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <state key="normal" title="♡">
                                                 <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,6 +56,7 @@
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="jQz-dT-XHe" secondAttribute="trailing" id="8gM-HY-zu1"/>
                                         <constraint firstItem="bu5-cg-MTa" firstAttribute="leading" secondItem="4Jj-Dp-oYk" secondAttribute="leading" id="CGs-et-HMM"/>
                                         <constraint firstItem="d87-Au-6cP" firstAttribute="top" secondItem="ajK-zz-aFI" secondAttribute="bottom" constant="8" id="HdN-hN-qfv"/>
                                         <constraint firstItem="ajK-zz-aFI" firstAttribute="leading" secondItem="4Jj-Dp-oYk" secondAttribute="leadingMargin" id="OBW-rs-zen"/>
@@ -67,6 +67,7 @@
                                         <constraint firstItem="ajK-zz-aFI" firstAttribute="top" secondItem="4Jj-Dp-oYk" secondAttribute="topMargin" id="azd-BN-UaO"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="d87-Au-6cP" secondAttribute="trailing" id="eB9-Hz-HbR"/>
                                         <constraint firstItem="bu5-cg-MTa" firstAttribute="top" secondItem="4Jj-Dp-oYk" secondAttribute="top" id="eBd-O7-H2c"/>
+                                        <constraint firstItem="jQz-dT-XHe" firstAttribute="top" secondItem="4Jj-Dp-oYk" secondAttribute="topMargin" id="hhv-aU-v9s"/>
                                         <constraint firstItem="PGD-BZ-KW6" firstAttribute="centerY" secondItem="4Jj-Dp-oYk" secondAttribute="centerY" id="oPV-0S-P4v"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ajK-zz-aFI" secondAttribute="trailing" id="z6D-Um-4Z5"/>
                                     </constraints>
